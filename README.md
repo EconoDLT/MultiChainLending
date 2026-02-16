@@ -18,6 +18,7 @@ Raw data.
 How it is processed.
 Processed data.
 All data details.
+Including data anomalies such as: Missing lending data, extreme outliers in AAVE v3 and Radiant Capital v2 etc.
 
 
 

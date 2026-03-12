@@ -1,17 +1,11 @@
-# MultiChainLending
+# Multi-Chain Lending
 
-[TITLE]
+Research Data:
+53 Bridge Protocols,
+15 Decentralized Protocols,
+9 Blockchains (Three Groups: Ethereum L1, L2, AltL1).
+Protocol availability across blockchains is shown in protocol_availability.png.
 
-This repository contains code and data for the following research paper.
-
-[CITE TO PAPER]
-
-[ABSTRACTS]
-Abstract:
-Keywords:
-
-[CODE]
-Code is written in ... and is found in file ...
 
 [DATA]
 Raw data.

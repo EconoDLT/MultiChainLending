@@ -20,7 +20,7 @@ The analyzed dataset is composed of four files:
 - aggregated_lending.csv
 
 
-Data has a daily frequency and covers the period: 24 October 2022 to 01 January 2025.
+Data has a daily frequency and covers the period: 17 October 2022 to 01 January 2025. The start date is the first day when the bridge volume data was available on DeFiLlama for the first time.
 
 Core Financial Metrics:
 TVL, Revenue, Bridge Volume, Liquidation.

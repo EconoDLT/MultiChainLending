@@ -32,7 +32,7 @@ Yield Data: ETH APY, Stablecoin APY.
 
 Dummy Variables For Events: Bridge Integrations, Bridge Hack, Mainnet.
 
-Market Sentiment: Fear and Greed Index (FGI)
+Market Sentiment: Fear and Greed Index (FGI).
 
 Other Control Variables: ETH Volatility, Gas Price.
 

@@ -2,7 +2,7 @@
 This repository contains code and data for the submitted paper.
 
 CODE: 
-Code is written in R and is found in the file lending_analysis.R.
+Code is written in R and is found in the file lending_analysis.R. Fundamental used functions are plm() for the panel data (fixed effects) regression and lm() for the OLS regressions.
 
 DATA OVERVIEW:
 53 Bridge Protocols,

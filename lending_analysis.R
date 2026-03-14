@@ -22,8 +22,8 @@ sink("regression_results.txt", split = TRUE)  # split = TRUE also shows output i
 # =============================================================================
 
 # Dependent variables (will be log-transformed)
-A1 <- "totalValueLockedUSD"
-A2 <- "dailyTotalRevenueUSD"
+A1 <- "dailyTotalRevenueUSD"
+A2 <- "totalValueLockedUSD"
 
 # Dummy (event) variables
 D1 <- "bridgeHack"
@@ -40,8 +40,8 @@ C6 <- "volETH"              # 7-day ETH volatility (for regressions only)
 
 # Bridge / continuous variables (will be log-transformed)
 B1 <- "bridgeVolume"
-B2 <- "dailyWithdrawUSD"
-B3 <- "dailyLiquidateUSD"
+B2 <- "dailyLiquidateUSD"
+B3 <- "dailyWithdrawUSD"
 B4 <- "CER"
 
 # Date column
@@ -127,9 +127,9 @@ calculate_vif(agg_raw, A1, all_ivs_raw_no_dummies, "(without dummies)")
 # 1. READ AND COMBINE PANEL DATA
 # =============================================================================
 panel_data <- bind_rows(
-  read_csv("ethereum_lending.csv") %>% mutate(Network = "ethereum"),
-  read_csv("L2_lending.csv") %>% mutate(Network = "L2"),
-  read_csv("altL1_lending.csv") %>% mutate(Network = "altL1")
+  read_csv("ethereum_lending.csv") %>% mutate(Network = "network1"),
+  read_csv("L2_lending.csv") %>% mutate(Network = "network2"),
+  read_csv("altL1_lending.csv") %>% mutate(Network = "network3")
 )
 
 panel_data$Date <- ymd(panel_data$Date)
@@ -171,8 +171,8 @@ calculate_vif(panel_vif_data, "log_A1", log_ivs_reg_no_dummies, "(without dummie
 # 1.c Interaction terms
 panel_data <- panel_data %>%
   mutate(
-    B1_net2 = log_B1 * (Network == "L2"),
-    B1_net3 = log_B1 * (Network == "altL1")
+    B1_net2 = log_B1 * (Network == "network2"),
+    B1_net3 = log_B1 * (Network == "network3")
   )
 
 # Prepare pdata.frame
@@ -326,6 +326,3 @@ cat("\n\nAll results have been saved to 'regression_results2.txt'\n")
 cat("\nNote: \n")
 cat("  - Summary statistics use ETHreturn\n")
 cat("  - All regression analyses use volETH instead of ETHreturn\n")
-
-
-

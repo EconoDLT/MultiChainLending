@@ -3,6 +3,8 @@
 
 This repository contains the collected data, the R code used, further explanations and clarifications for the research paper that extends automated risk management models of on-chain lending protocols, with cross-chain components and variables.
 
+**Required Skills/Knowledge:** Distributed Systems, Econometrics, Financial Modelling, Collateralization, Debt Market.
+
 ---
 
 ## Repository Structure

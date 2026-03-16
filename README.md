@@ -67,9 +67,9 @@ The analyzed dataset is composed of four files:
 The following variables are included in the data files:
 - Core Financial Metrics: `TVL`, `Revenue`, `BridgeVolume`, `Liquidation`, `Withdraw`, `Deposit`, `ActiveUsers`.
 - Credit Risk Parameter: `CER` (Credit Expansion Ratio)
-$$
-CER = \frac{dailyBorrowUSD}{dailyDepositUSD}
-$$
+``
+CER = dailyBorrowUSD / dailyDepositUSD
+``
 - Yield Data: `ETH_APY`, `Stablecoin_APY`.
 - Dummy Variables For Events: `BridgeIntegrations`, `BridgeHack`, `Mainnet`.
 - Market Sentiment: `FGI` (Fear and Greed Index).

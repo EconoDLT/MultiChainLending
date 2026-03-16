@@ -51,12 +51,12 @@ The dataset covers:
 Protocol availability across blockchains is shown in `protocol_availability.png`.
 Data has a daily frequency and covers the period: 17 October 2022 to 01 January 2025. The start date is when the bridge volume data was available on DeFiLlama for the first time.
 
-## Raw Data
+### Raw Data
 
 Separate raw data files are uploaded to the `data/raw_data` folder. The source of each data file is written in the folder names.
 E.g.: `MultiChainLending/Data/RawData/Bridge_Volume_From_DeFiLlama/bridge_volumes_arbitrum_one.csv`
 
-## Processed Data
+### Processed Data
 
 The analyzed dataset is composed of four files:
 - `ethereum_lending.csv`

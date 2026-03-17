@@ -7,6 +7,16 @@ This repository contains the collected data, the R code used, further explanatio
 
 ---
 
+## [REDACTED - PAPER TITLE]
+
+`{CITATION]`
+
+[ABSTRACT - KEY WORDS]
+
+---
+
+---
+
 ## Repository Structure
 
 ```

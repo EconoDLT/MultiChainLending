@@ -14,11 +14,9 @@ MultiChainLending/
 │
 ├── README.md
 │
-├── analysis_code/
-│   └── lending_analysis.R
+├── lending_analysis.R              # Code to analyze the data
 │
-├── protocol_data_availability/
-│   └── protocol_availability.png   # The list of protocols involved in the data
+├── protocol_availability.png   # The list of protocols involved in the data
 │
 └── data/
     └── processed_data/             # These files are required to run the script

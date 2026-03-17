@@ -15,8 +15,6 @@ This repository contains the collected data, the R code used, further explanatio
 
 ---
 
----
-
 ## Repository Structure
 
 ```

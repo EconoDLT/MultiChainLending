@@ -26,7 +26,7 @@ MultiChainLending/
     │   └── L2_lending.csv
     │   └── altL1_lending.csv
     │   └── aggregated_lending.csv
-    └── raw_data/                   # This folder includes a lot of raw data files
+    └── raw_data/                   # This folder includes multiple raw data files
                                     # Free to use as long as the data source is stated
 ```
 

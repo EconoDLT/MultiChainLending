@@ -1,17 +1,14 @@
 # Multi-Chain Lending
 **DeFi, Lending Protocols, Risk-Management Models, and Cross-Chain Asset Transfers across 9 EVM Blockchains with 3 Different Network Architectures**
 
-This repository contains the collected data, the R code used, further explanations and clarifications for the research paper that extends automated risk management models of on-chain lending protocols, with cross-chain components and variables.
+This repository contains the collected data, the R code used, further explanations and clarifications for the following research paper that extends automated risk management models of on-chain lending protocols, with cross-chain components and variables:
+
+[CITATION + arXiv Link]
+
+[ABSTRACT (Italic)
+KEY WORDS (Bold)]
 
 **Related Skills/Knowledge:** Distributed Systems, Econometrics, Financial Modelling, Collateralization, Debt Market.
-
----
-
-## [REDACTED - PAPER TITLE]
-
-`{CITATION]`
-
-[ABSTRACT - KEY WORDS]
 
 ---
 
@@ -45,6 +42,8 @@ MultiChainLending/
 The script is written in R. Fundamental functions are:
 - `plm()` for the panel data (fixed effects) regression, and
 - `lm()` for the OLS regressions.
+
+**Inputs:** `ethereum_lending.csv`, `L2_lending.csv`, `altL1_lending.csv`, `aggregated_lending.csv`.
 
 ---
 

@@ -76,5 +76,3 @@ CER = dailyBorrowUSD / dailyDepositUSD
 ``
 
 ---
-
-Contact for more details and clarifications: hasretozan.sevim@unicatt.it

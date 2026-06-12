@@ -17,12 +17,10 @@ MultiChainLending/
 │
 └── data/
     └── processed_data/             # These files are required to run the script
-    │   └── ethereum_lending.csv
-    │   └── L2_lending.csv
-    │   └── altL1_lending.csv
-    │   └── aggregated_lending.csv
-    └── raw_data/                   # This folder includes multiple raw data files
-                                    # Free to use as long as the data source is stated
+        └── ethereum_lending.csv
+        └── L2_lending.csv
+        └── altL1_lending.csv
+        └── aggregated_lending.csv
 ```
 
 ---
@@ -49,11 +47,6 @@ The dataset covers:
 - 9 blockchains (three groups: Ethereum (L1), L2, AltL1).
 Protocol availability across blockchains is shown in `protocol_availability.png`.
 Data has a daily frequency and covers the period: 17 October 2022 to 01 January 2025. The start date is when the bridge volume data was available on DeFiLlama for the first time.
-
-### Raw Data
-
-Separate raw data files are uploaded to the `data/raw_data` folder. The source of each data file is written in the folder names.
-E.g.: `MultiChainLending/Data/RawData/Bridge_Volume_From_DeFiLlama/bridge_volumes_arbitrum_one.csv`
 
 ### Processed Data
 

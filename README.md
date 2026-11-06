@@ -42,7 +42,9 @@ The script is written in R. Fundamental functions are:
 - `plm()` for the panel data (fixed effects) regression, and
 - `lm()` for the OLS regressions.
 
-**Inputs:** `ethereum_lending.csv`, `L2_lending.csv`, `altL1_lending.csv`, `aggregated_lending.csv`.
+**Inputs:** `ethereum_lending.csv`, `L2_lending.csv`, `altL1_lending.csv`, `aggregated_lending.csv`. The script reads these files from the working directory, so run it from `data/processed_data/` or copy the files next to it.
+
+**Variable labels:** in the script, `A1` is Revenue (`dailyTotalRevenueUSD`) and `A2` is TVL (`totalValueLockedUSD`).
 
 ---
 
@@ -66,11 +68,11 @@ The analyzed dataset is composed of four files:
 - `aggregated_lending.csv`
 
 The following variables are included in the data files:
-- Core Financial Metrics: `TVL`, `Revenue`, `BridgeVolume`, `Liquidation`, `Withdraw`, `Deposit`, `ActiveUsers`.
-- Yield Data: `ETH_APY`, `Stablecoin_APY`.
-- Dummy Variables For Events: `BridgeIntegrations`, `BridgeHack`, `Mainnet`.
+- Core Financial Metrics: `totalValueLockedUSD`, `dailyTotalRevenueUSD`, `bridgeVolume`, `dailyLiquidateUSD`, `dailyWithdrawUSD`, `dailyDepositUSD`, `dailyActiveUsers`.
+- Yield Data: `weightedAverageEthAPY`, `weightedAverageStablecoinAPY`.
+- Dummy Variables For Events: `bridgeIntegrations`, `bridgeHack`, `mainnet`.
 - Market Sentiment: `FGI` (Fear and Greed Index).
-- Network Control Variables: `volETH` (ETH Volatility), `GasPrice`.
+- Network Control Variables: `volETH` (ETH Volatility), `weightedAverageGasPrice`.
 - Credit Risk Parameter: `CER` (Credit Expansion Ratio).
 
 ``
@@ -92,8 +94,9 @@ To address potential reverse causality, simultaneity, and omitted-variable bias,
 **Method:** Added day fixed effects (`effect = "twoways"`) to the individual fixed-effects model.
 
 **Result:**
-- TVL coefficient changes from **+0.138 → -0.266**
-- Revenue coefficient changes from **-0.061 → -0.311**
+- Revenue coefficient (L1 slope) changes from **+0.138 → -0.266**
+- TVL coefficient (L1 slope) changes from **-0.061 → -0.311**
+- Implied L2 TVL slope changes from **+0.089 → -0.124**
 
 **Takeaway:** Daily fixed effects noticeably change the coefficient estimates. However, with only **3 cross-sectional units** and roughly **800 day fixed effects**, the model has very limited residual degrees of freedom (negative adjusted R²). We therefore treat this as a sensitivity check rather than a replacement for the main specification.
 
@@ -105,8 +108,8 @@ To address potential reverse causality, simultaneity, and omitted-variable bias,
 - Fully lagged specification (all continuous regressors lagged by one day)
 
 **Result:**
-- **TVL:** Bridge coefficient remains between **0.125** – **0.195**
-- **Revenue:** Bridge coefficient remains between **-0.061** – **-0.014**
+- **Revenue:** Bridge coefficient (L1 slope) remains between **0.125** – **0.195**
+- **TVL:** Bridge coefficient (L1 slope) remains between **-0.061** – **-0.014**
 
 **Takeaway:** The bridge-volume coefficient remains stable across lag structures, weakening concerns that same-day simultaneity is driving the baseline results.
 
@@ -119,8 +122,8 @@ To address potential reverse causality, simultaneity, and omitted-variable bias,
 - Wu-Hausman test **p < 0.001** (evidence of endogeneity)
 
 **Result:**
-- **TVL:** IV = **0.358** (OLS = **0.107**)
-- **Revenue:** IV = **-0.012** (OLS = **0.013**)
+- **Revenue:** IV = **0.358** (baseline FE = **0.138**)
+- **TVL:** IV = **-0.012**, not significant (baseline FE = **-0.061**)
 
 **Takeaway:** The IV results provide evidence that endogeneity is present. However, because the exclusion restriction cannot be directly verified, the estimates should be viewed as exploratory rather than definitive causal estimates.
 
